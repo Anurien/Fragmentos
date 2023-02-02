@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/salirR"
         android:layout_width="111dp"
         android:layout_height="50dp"
         android:text="Enviar"
@@ -49,6 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Respuesta"
         android:inputType="number"
         android:minHeight="48dp"
         android:text=""
