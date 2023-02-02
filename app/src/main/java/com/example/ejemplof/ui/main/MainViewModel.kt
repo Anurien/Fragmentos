@@ -30,8 +30,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
         livenum1.value = num1
         livenum2.value = num2
-        result(resultado)
-        liveResultado.value = resultado
+        //liveResultado.value = resultado
+        Log.d("asdf", liveResultado.value.toString())
 
     }
 
