@@ -26,16 +26,16 @@ class MainActivity : AppCompatActivity() {
         btnSuma.setOnClickListener { replaceFragment(SumaFragment()) }
         btnResta.setOnClickListener { replaceFragment(MultiFragment()) }
 
-        /*otraClase.liveResultado.observe(
+        otraClase.liveResultado.observe(
             this,
             Observer(
                 fun(resultado: Int) {
                     val tvResultado: TextView = findViewById(R.id.resultado)
-                    tvResultado.setText(resultado)
+                    tvResultado.text = "$resultado"
 
                 }
             )
-        )*/
+        )
     }
 
     private fun replaceFragment(fragment: Fragment) {
