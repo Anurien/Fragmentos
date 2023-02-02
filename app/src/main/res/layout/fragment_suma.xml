@@ -19,15 +19,30 @@
         app:layout_constraintVertical_bias="0.237" />
 
     <TextView
-        android:id="@+id/texto"
-        android:layout_width="121dp"
+        android:id="@+id/suma1"
+        android:layout_width="88dp"
         android:layout_height="41dp"
+        android:hint="numero1 "
         android:text=""
         app:layout_constraintBottom_toTopOf="@+id/numerosuma"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.312"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.867" />
+
+    <TextView
+        android:id="@+id/suma2"
+        android:layout_width="88dp"
+        android:layout_height="41dp"
+        android:hint="numero 2"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/numerosuma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.69"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.867" />
 
     <EditText
         android:id="@+id/numerosuma"
