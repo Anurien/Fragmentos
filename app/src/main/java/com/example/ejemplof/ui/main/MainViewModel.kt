@@ -11,10 +11,10 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlin.math.floor
 
 @OptIn(DelicateCoroutinesApi::class)
-class MainViewModel (application: Application): AndroidViewModel(application) {
-    private var num1 = floor(Math.random()*10).toInt()
-    private var num2 = floor(Math.random()*10).toInt()
-    private var resultado : Int = 0;
+class MainViewModel(application: Application) : AndroidViewModel(application) {
+    private var num1 = floor(Math.random() * 10).toInt()
+    private var num2 = floor(Math.random() * 10).toInt()
+    private var resultado: Int = 0;
 
 
     // para poder utilizar toast en el view
@@ -30,10 +30,14 @@ class MainViewModel (application: Application): AndroidViewModel(application) {
 
         livenum1.value = num1
         livenum2.value = num2
+        result(resultado)
         liveResultado.value = resultado
 
-        }
+    }
+
     fun result(item: Int) {
         liveResultado.value = item
+        Log.d("asd", liveResultado.value.toString())
+
     }
 }

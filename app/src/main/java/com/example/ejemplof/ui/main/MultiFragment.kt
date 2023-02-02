@@ -3,6 +3,7 @@ package com.example.ejemplof.ui.main
 import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,20 +47,23 @@ class MultiFragment : Fragment() {
                 }
             )
         )
-        /*val tvResultado = view?.findViewById<EditText>(R.id.numerosuma)
-        val btnSalir = view?.findViewById<Button>(R.id.button)
-        btnSalir?.setOnClickListener {
-            viewModel.result(Integer.valueOf(tvResultado?.text.toString()))
-        }*/
-
     }
 
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?):
+            View {
+       // return inflater.inflate(R.layout.fragment_main, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        // Inflate the layout for this fragment
+        //Hay que poner esto aqui para que detecte el view sino los botones son nulos
+        val view: View = inflater.inflate(R.layout.fragment_main, container, false)
+        val btnSalir = view.findViewById<Button>(R.id.salirR)
+        val tvResultado = view.findViewById<EditText>(R.id.numeroresta)
+        btnSalir?.setOnClickListener {
+            Log.d("zxc",tvResultado?.text.toString())
+            viewModel.result(Integer.valueOf(tvResultado?.text.toString()))
+
+        }
+        return view
     }
 
 }

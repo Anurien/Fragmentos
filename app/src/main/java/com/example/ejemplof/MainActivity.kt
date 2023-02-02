@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -21,8 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btnSuma: Button = findViewById(R.id.button)
-        val btnResta: Button = findViewById(R.id.button2)
+        val btnSuma: Button = findViewById(R.id.button2)
+        val btnResta: Button = findViewById(R.id.button)
         btnSuma.setOnClickListener { replaceFragment(SumaFragment()) }
         btnResta.setOnClickListener { replaceFragment(MultiFragment()) }
 
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             Observer(
                 fun(resultado: Int) {
                     val tvResultado: TextView = findViewById(R.id.resultado)
+                    Log.d("qwe", tvResultado.text.toString())
                     tvResultado.text = "$resultado"
 
                 }
