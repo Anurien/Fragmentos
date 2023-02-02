@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/salirS"
         android:layout_width="111dp"
         android:layout_height="50dp"
         android:text="Enviar"
