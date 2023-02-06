@@ -1,13 +1,10 @@
 package com.example.ejemplof
 
-import android.content.pm.ActivityInfo
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -15,15 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.ejemplof.ui.main.MainViewModel
 import com.example.ejemplof.ui.main.MultiFragment
 import com.example.ejemplof.ui.main.SumaFragment
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
     val otraClase by viewModels<MainViewModel>()
-    @OptIn(DelicateCoroutinesApi::class)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,14 +30,13 @@ class MainActivity : AppCompatActivity() {
             this,
             Observer(
                 fun(resultado: Int) {
-                    GlobalScope.launch(Dispatchers.Main) {
-                        if (resultado > 0) {
-                            val tvResultado: TextView = findViewById(R.id.resultado)
-                            tvResultado.text = "$resultado"
-                            Log.d("fgh", tvResultado.text.toString())
-                        }
+                    Log.d("fghj", resultado.toString())
+                        val tvResultado: TextView = findViewById(R.id.resultado)
 
-                    }
+
+                    tvResultado.text = "Result: $resultado"
+                        Log.d("fgh", tvResultado.text.toString())
+
                 }
             )
         )

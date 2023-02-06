@@ -32,7 +32,7 @@ class MultiFragment : Fragment() {
                 fun(num1: Int) {
                     val tvNum1 = view?.findViewById<TextView>(R.id.resta1)
 
-                    tvNum1?.text = "Num1:  $num1"
+                    tvNum1?.text = "$num1"
                 }
             )
         )
@@ -43,7 +43,7 @@ class MultiFragment : Fragment() {
                 fun(num2: Int) {
                     val tvNum2 = view?.findViewById<TextView>(R.id.resta2)
 
-                    tvNum2?.text = "Num2:  $num2"
+                    tvNum2?.text = "$num2"
                 }
             )
         )
