@@ -21,7 +21,8 @@ class SumaFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        //Para que el fragment actualice el valor del textview hay que poner requireActivity
+        viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         // Observadores para recoger las variables del viewmodel
         viewModel.livenum1.observe(
             this,
@@ -59,7 +60,10 @@ class SumaFragment : Fragment() {
         val tvResultado = view.findViewById<EditText>(R.id.numerosuma)
         btnSalir?.setOnClickListener {
             Log.d("zxc", tvResultado?.text.toString())
-            viewModel.result(Integer.parseInt(tvResultado?.text.toString()))
+            if(tvResultado.text != null){
+                viewModel.result(Integer.parseInt(tvResultado?.text.toString()))
+            }
+
         }
         return view
     }

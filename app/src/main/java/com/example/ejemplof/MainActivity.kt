@@ -31,11 +31,9 @@ class MainActivity : AppCompatActivity() {
             Observer(
                 fun(resultado: Int) {
                     Log.d("fghj", resultado.toString())
-                        val tvResultado: TextView = findViewById(R.id.resultado)
-
-
+                    val tvResultado: TextView = findViewById(R.id.resultado)
                     tvResultado.text = "Result: $resultado"
-                        Log.d("fgh", tvResultado.text.toString())
+                    Log.d("fgh", tvResultado.text.toString())
 
                 }
             )
