@@ -15,17 +15,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private var num1 = floor(Math.random() * 10).toInt()
     private var num2 = floor(Math.random() * 10).toInt()
     private var resultado = 0;
-    /*private val somethingLiveData = MutableLiveData<Int>()
-    val something: LiveData<Int>
-        get() = somethingLiveData
-
-    fun load() {
-        // Ok to call postValue here either inside or outside a coroutine
-        viewModelScope.launch {
-            somethingLiveData.postValue(floor(Math.random() * 10).toInt())
-        }
-    }
-*/
 
     // para poder utilizar toast en el view
     @SuppressLint("StaticFieldLeak")
@@ -56,6 +45,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         Toast.makeText(context, liveResultado.value.toString(), Toast.LENGTH_SHORT)
             .show()
 
+    }
+    fun actualizarNumero(){
+        val num1 = floor(Math.random() * 10).toInt()
+        val num2 = floor(Math.random() * 10).toInt()
+        livenum1.value = num1
+        livenum2.value = num2
     }
 
 }

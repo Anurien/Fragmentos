@@ -23,8 +23,14 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
         val btnSuma: Button = findViewById(R.id.button2)
         val btnResta: Button = findViewById(R.id.button)
-        btnSuma.setOnClickListener { replaceFragment(SumaFragment()) }
-        btnResta.setOnClickListener { replaceFragment(MultiFragment()) }
+        btnSuma.setOnClickListener {
+            replaceFragment(SumaFragment())
+            viewModel.actualizarNumero()
+        }
+        btnResta.setOnClickListener {
+            replaceFragment(MultiFragment())
+            viewModel.actualizarNumero()
+        }
 
         otraClase.liveResultado.observe(
             this,

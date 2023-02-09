@@ -24,7 +24,7 @@ class MultiFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
         // TODO: Use the ViewModel
         viewModel.livenum1.observe(
             this,
